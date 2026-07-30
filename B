@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 Happy Birthday My Princess! 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', cursive, sans-serif;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 900px;
+            width: 100%;
+            position: relative;
+            animation: floatContainer 3s ease-in-out infinite;
+        }
+
+        @keyframes floatContainer {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .main-heart {
+            font-size: 4.5em;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            14% { transform: scale(1.3); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.3); }
+            70% { transform: scale(1); }
+        }
+
+        h1 {
+            color: #e74c3c;
+            font-size: 2.8em;
+            margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #2c3e50;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .cake-icon {
+            font-size: 3.5em;
+            margin: 10px 0;
+            animation: float 2s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+
+        .message-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            font-size: 1.1em;
+            line-height: 1.8;
+            box-shadow: 0 5px 20px rgba(245, 87, 108, 0.3);
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .option-btn {
+            padding: 18px 15px;
+            border: none;
+            border-radius: 20px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .option-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .option-btn:hover::before {
+            left: 100%;
+        }
+
+        .option-btn:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+        .option-btn:active {
+            transform: scale(0.95);
+        }
+
+        .option-btn .icon {
+            font-size: 2em;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .btn-rose { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .btn-stars { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .btn-heart { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); }
+        .btn-moon { background: linear-gradient(135deg, #a8c0ff 0%, #3f2b96 100%); }
+        .btn-cake { 
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            color: #2c3e50;
+            grid-column: 1 / -1;
+            padding: 20px;
+            font-size: 1.2em;
+            border: 3px solid #ff6b6b;
+        }
+        .btn-cake .icon { font-size: 2.5em; }
+
+        .surprise-area {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 20px;
+            min-height: 100px;
+            background: #f8f9fa;
+            border: 2px dashed #e74c3c;
+            display: none;
+            animation: slideUp 0.6s ease;
+            position: relative;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .surprise-area.show {
+            display: block;
+        }
+
+        .surprise-content {
+            font-size: 1.2em;
+            line-height: 2;
+            color: #2c3e50;
+        }
+
+        .surprise-content .big-emoji {
+            font-size: 3em;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .special-cake-display {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .special-cake-display .cake-big {
+            font-size: 8em;
+            animation: cakeFloat 2s ease-in-out infinite;
+            display: block;
+        }
+
+        @keyframes cakeFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-15px) scale(1.05); }
+        }
+
+        .romantic-text {
+            font-size: 1.5em;
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .candle-animation {
+            display: inline-block;
+            animation: candleFlicker 0.3s infinite alternate;
+        }
+
+        @keyframes candleFlicker {
+            0% { transform: scale(1) rotate(-2deg); }
+            100% { transform: scale(1.1) rotate(2deg); }
+        }
+
+        /* Floating particles */
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            font-size: 2em;
+            animation: particleFloat 4s linear forwards;
+            z-index: 1000;
+        }
+
+        @keyframes particleFloat {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        .heart-burst {
+            position: fixed;
+            pointer-events: none;
+            animation: burstEffect 1s ease-out forwards;
+            font-size: 2em;
+            z-index: 999;
+        }
+
+        @keyframes burstEffect {
+            0% { transform: scale(0) rotate(0deg); opacity: 1; }
+            100% { transform: scale(2) rotate(360deg); opacity: 0; }
+        }
+
+        .confetti-piece {
+            position: fixed;
+            pointer-events: none;
+            animation: confettiFall 3s linear forwards;
+            font-size: 1.5em;
+            z-index: 998;
+        }
+
+        @keyframes confettiFall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2em; }
+            .container { padding: 20px; }
+            .options-grid { grid-template-columns: 1fr 1fr; }
+            .btn-cake { grid-column: 1 / -1; }
+            .special-cake-display .cake-big { font-size: 5em; }
+            .surprise-content { font-size: 1em; }
+        }
+
+        /* Glow effect for cake */
+        .glow {
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 107, 0.3); }
+            50% { box-shadow: 0 0 50px rgba(255, 107, 107, 0.6); }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #e74c3c;
+            transition: transform 0.3s;
+        }
+
+        .close-btn:hover {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-heart">❤️</div>
+        <h1>Happy Birthday My Love! 🎉</h1>
+        <div class="cake-icon">🎂</div>
+        <p class="subtitle">💕 Choose your surprise, my princess! 💕</p>
+        
+        <div class="message-box">
+            <p>✨ To the most beautiful soul in the universe ✨</p>
+            <p>💖 Every moment with you is a precious gift 💖</p>
+        </div>
+
+        <div class="options-grid">
+            <button class="option-btn btn-rose" onclick="showSurprise('rose')">
+                <span class="icon">🌹</span>
+                Rose Garden
+                <small style="display:block;font-size:0.7em;opacity:0.8;">For my beautiful flower</small>
+            </button>
+            
+            <button class="option-btn btn-stars" onclick="showSurprise('stars')">
+                <span class="icon">⭐</span>
+                Starry Night
+                <small style="display:block;font-size:0.7em;opacity:0.8;">You shine brightest</small>
+            </button>
+            
+            <button class="option-btn btn-heart" onclick="showSurprise('heart')">
+                <span class="icon">💝</span>
+                Heart's Desire
+                <small style="display:block;font-size:0.7em;opacity:0.8;">My love for you</small>
+            </button>
+            
+            <button class="option-btn btn-moon" onclick="showSurprise('moon')">
+                <span class="icon">🌙</span>
+                Moonlight Promise
+                <small style="display:block;font-size:0.7em;opacity:0.8;">Forever and always</small>
+            </button>
+
+            <button class="option-btn btn-cake" onclick="showCakeSurprise()">
+                <span class="icon">🎂</span>
+                🎉 Special Birthday Cake! 🎉
+                <small style="display:block;font-size:0.7em;opacity:0.8;">Click for a magical surprise!</small>
+            </button>
+        </div>
+
+        <div class="surprise-area" id="surpriseArea">
+            <button class="close-btn" onclick="closeSurprise()">✕</button>
+            <div class="surprise-content" id="surpriseContent">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Surprise data
+        const surprises = {
+            rose: {
+                emoji: '🌹',
+                title: 'My Beautiful Rose',
+                messages: [
+                    'Just like a rose, you are beautiful and unique! 🌹',
+                    'Your beauty brightens my world every single day! ✨',
+                    'You are the most precious flower in my garden of life! 💕',
+                    'Every day with you is like walking through a garden of love! 🌸',
+                    'I will love you forever, my beautiful rose! ❤️'
+                ],
+                bg: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+            },
+            stars: {
+                emoji: '⭐',
+                title: 'My Shining Star',
+                messages: [
+                    'You shine brighter than all the stars in the sky! ⭐',
+                    'My love for you is as vast as the universe! 🌌',
+                    'Every moment with you is magical! ✨',
+                    'You are my guiding light in the darkest nights! 🌟',
+                    'I wish upon you, my brightest star! 💫'
+                ],
+                bg: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
+            },
+            heart: {
+                emoji: '💝',
+                title: 'My Heart\'s Desire',
+                messages: [
+                    'You have my whole heart, forever and always! 💖',
+                    'Every heartbeat of mine calls your name! ❤️',
+                    'You are the love of my life, my everything! 💕',
+                    'My heart belongs to you, now and forever! 💗',
+                    'I love you more than words can ever express! 💘'
+                ],
+                bg: 'linear-gradient(135deg, #f6d365 0%, #fda085 100%)'
+            },
+            moon: {
+                emoji: '🌙',
+                title: 'Moonlight Promise',
+                messages: [
+                    'I promise to love you until the moon fades! 🌙',
+                    'You are my moon and my stars, my everything! ✨',
+                    'Our love story is written in the stars! 📖',
+                    'Every night, I thank the moon for bringing you to me! 🌟',
+                    'Forever and always, under the moonlight! 💕'
+                ],
+                bg: 'linear-gradient(135deg, #a8c0ff 0%, #3f2b96 100%)'
+            }
+        };
+
+        // Show surprise
+        function showSurprise(type) {
+            const surprise = surprises[type];
+            const area = document.getElementById('surpriseArea');
+            const content = document.getElementById('surpriseContent');
+            
+            let html = `
+                <div style="background: ${surprise.bg}; padding: 20px; border-radius: 15px; color: white;">
+                    <div class="big-emoji">${surprise.emoji}</div>
+                    <h2 style="color: white; margin: 10px 0;">${surprise.title}</h2>
+            `;
+            
+            surprise.messages.forEach(msg => {
+                html += `<p style="margin: 10px 0;">${msg}</p>`;
+            });
+            
+            html += `
+                    <div style="margin-top: 15px; font-size: 2em;">
+                        ${'❤️'.repeat(5)}
+                    </div>
+                </div>
+            `;
+            
+            content.innerHTML = html;
+            area.classList.add('show');
+            
+            // Trigger animations
+            createHeartBurst();
+            createFloatingParticles(type);
+            
+            // Scroll to surprise
+            area.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Show Cake Surprise (Special)
+        function showCakeSurprise() {
+            const area = document.getElementById('surpriseArea');
+            const content = document.getElementById('surpriseContent');
+            
+            const cakeMessages = [
+                '🎂 Happy Birthday, my love! You deserve all the sweetness in the world! 💕',
+                '🎉 You are the icing on my cake of life! 🎂',
+                '✨ Every year with you is sweeter than the last! 💖',
+                '🎈 You make my life a celebration! 🎊',
+                '💝 Here\'s to many more beautiful years together! 💕'
+            ];
+            
+            let html = `
+                <div class="special-cake-display">
+                    <div class="cake-big">
+                        🎂
+                        <span style="font-size: 0.5em; display: block; margin-top: -20px;">
+                            🕯️<span class="candle-animation">✨</span>🕯️
+                        </span>
+                    </div>
+                    
+                    <div class="romantic-text">
+                        🌟 HAPPY BIRTHDAY MY PRINCESS! 🌟
+                    </div>
+                    
+                    <div style="font-size: 1.2em; line-height: 2; color: #2c3e50;">
+            `;
+            
+            cakeMessages.forEach(msg => {
+                html += `<p>${msg}</p>`;
+            });
+            
+            html += `
+                    </div>
+                    
+                    <div style="margin: 15px 0; font-size: 3em;">
+                        🎉🎊🎈🎁🎀
+                    </div>
+                    
+                    <div style="font-size: 1.5em; color: #e74c3c; font-weight: bold; animation: heartbeat 1.5s infinite;">
+                        I LOVE YOU! 💕
+                    </div>
+                    
+                    <div style="margin-top: 15px; font-size: 2em;">
+                        ${'🎂'.repeat(5)}
+                    </div>
+                </div>
+            `;
+            
+            content.innerHTML = html;
+            area.classList.add('show');
+            
+            // Extra special effects for cake
+            createCakeCelebration();
+            
+            // Scroll to surprise
+            area.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Close surprise
+        function closeSurprise() {
+            const area = document.getElementById('surpriseArea');
+            area.classList.remove('show');
+            area.style.display = 'none';
+            setTimeout(() => {
+                area.style.display = '';
+            }, 100);
+        }
+
+        // Create heart burst effect
+        function createHeartBurst() {
+            const emojis = ['❤️', '💕', '💗', '💖', '💝', '💘', '💓'];
+            for (let i = 0; i < 12; i++) {
+                setTimeout(() => {
+                    const el = document.createElement('div');
+                    el.className = 'heart-burst';
+                    el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                    el.style.left = (Math.random() * 80 + 10) + 'vw';
+                    el.style.top = (Math.random() * 80 + 10) + 'vh';
+                    el.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                    document.body.appendChild(el);
+                    
+                    setTimeout(() => el.remove(), 1000);
+                }, i * 80);
+            }
+        }
+
+        // Create floating particles
+        function createFloatingParticles(type) {
+            const emojis = {
+                rose: ['🌹', '🌸', '🌺', '💐', '🌷'],
+                stars: ['⭐', '🌟', '✨', '💫', '🌌'],
+                heart: ['❤️', '💕', '💗', '💖', '💝'],
+                moon: ['🌙', '🌛', '🌜', '⭐', '✨']
+            };
+            
+            const selected = emojis[type] || ['❤️', '💕', '✨'];
+            
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const el = document.createElement('div');
+                    el.className = 'particle';
+                    el.textContent = selected[Math.floor(Math.random() * selected.length)];
+                    el.style.left = (Math.random() * 100) + 'vw';
+                    el.style.bottom = '-50px';
+                    el.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                    el.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                    document.body.appendChild(el);
+                    
+                    setTimeout(() => el.remove(), 6000);
+                }, i * 100);
+            }
+        }
+
+        // Create cake celebration
+        function createCakeCelebration() {
+            // Extra heart bursts
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => createHeartBurst(), i * 300);
+            }
+            
+            // Confetti
+            const confettiEmojis = ['🎉', '🎊', '🎈', '🎁', '✨', '⭐', '🌟', '💫'];
+            for (let i = 0; i < 40; i++) {
+                setTimeout(() => {
+                    const el = document.createElement('div');
+                    el.className = 'confetti-piece';
+                    el.textContent = confettiEmojis[Math.floor(Math.random() * confettiEmojis.length)];
+                    el.style.left = (Math.random() * 100) + 'vw';
+                    el.style.top = '-10vh';
+                    el.style.fontSize = (Math.random() * 25 + 15) + 'px';
+                    el.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    document.body.appendChild(el);
+                    
+                    setTimeout(() => el.remove(), 4000);
+                }, i * 100);
+            }
+            
+            // Balloons
+            const balloons = ['🎈', '🎈', '🎈', '🎈'];
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const el = document.createElement('div');
+                    el.className = 'particle';
+                    el.textContent = balloons[Math.floor(Math.random() * balloons.length)];
+                    el.style.left = (Math.random() * 100) + 'vw';
+                    el.style.bottom = '-50px';
+                    el.style.fontSize = (Math.random() * 40 + 30) + 'px';
+                    el.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    document.body.appendChild(el);
+                    
+                    setTimeout(() => el.remove(), 4000);
+                }, i * 150);
+            }
+        }
+
+        // Auto show initial surprise after 2 seconds
+        window.onload = function() {
+            setTimeout(() => {
+                showSurprise('heart');
+            }, 1500);
+            
+            // Create floating hearts on load
+            setTimeout(() => {
+                createFloatingParticles('heart');
+            }, 500);
+        };
+
+        // Add click sound effect simulation (visual feedback)
+        document.querySelectorAll('.option-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
